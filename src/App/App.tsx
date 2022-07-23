@@ -1,4 +1,7 @@
 import { Fragment } from 'react'
+import HelloJumbotron from '../HelloJumbotron/HelloJumbotron'
+
+import './App.module.scss'
 
 const App = () =>
   <Fragment>
@@ -9,7 +12,7 @@ const App = () =>
     </header>
 
     <main>
-
+      <HelloJumbotron />
     </main>
 
     <footer></footer>
