@@ -1,17 +1,33 @@
-import TypeAnimation from 'react-type-animation'
+import { useEffect, useState } from 'react'
 import style from './HelloJumbotron.module.scss'
 
-const HelloJumbotron = () =>
-  <article id="hello" className={style.container}>
-    <h1 className={style.title}>
-      <TypeAnimation
-        cursor={false}
-        sequence={[
-          1000, '안녕하세요,',
-          1000, '안녕하세요, 박민혁입니다.'
-        ]} />
-    </h1>
-    <p><code>#next</code>까지 스크롤을 내려주세요</p>
-  </article>
+const HelloJumbotron = () => {
+  const message = '안녕하세요,     박민혁입니다.'
+  const toBold = '박민혁'
+  const [queueIndex, setQueueIndex] = useState(0)
+
+  useEffect(() => {
+    let queueIndex = 0
+    const interval = setInterval(() => {
+      setQueueIndex(queueIndex++)
+      if (queueIndex > message.length) {
+        clearInterval(interval)
+      }
+    }, 100)
+  }, [])
+
+  return (
+    <article id="hello" className={style.container}>
+      <h1 className={style.title}>
+        {message.split('').map((v, i) =>
+          toBold.includes(v)
+            ? <strong>{queueIndex > i && v}</strong>
+            : <>{queueIndex > i && v}</>)}
+        {queueIndex < message.length - 1 && '_'}
+      </h1>
+      <p><code>#next</code>까지 스크롤을 내려주세요</p>
+    </article>
+  )
+}
 
 export default HelloJumbotron
