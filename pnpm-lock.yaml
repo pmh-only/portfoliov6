@@ -4,6 +4,7 @@ specifiers:
   '@fontsource/noto-sans-kr': ^4.5.10
   '@types/react': ^18.0.15
   '@types/react-dom': ^18.0.6
+  '@types/react-type-animation': ^1.1.1
   '@typescript-eslint/eslint-plugin': ^5.30.7
   '@typescript-eslint/parser': ^5.30.7
   '@vitejs/plugin-react': ^2.0.0
@@ -16,15 +17,18 @@ specifiers:
   eslint-plugin-react: ^7.30.1
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-type-animation: ^1.1.3
   sass: ^1.53.0
   typescript: ^4.6.4
   vite: ^3.0.0
 
 dependencies:
   '@fontsource/noto-sans-kr': 4.5.10
+  '@types/react-type-animation': 1.1.1
   d2coding: 1.3.2
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-type-animation: 1.1.3_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
   '@types/react': 18.0.15
@@ -305,6 +309,10 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
+  /@camwiegert/typical/0.1.1:
+    resolution: {integrity: sha512-4xAtH3F3uJ8boe9IPahdYFCBELmyOBwHGAn0rDO6C1rx0TuZb5f4UqfuiOQF7YiMJGCOsUIW7LyucMNnVQYsRg==}
+    dev: false
+
   /@eslint/eslintrc/1.3.0:
     resolution: {integrity: sha512-UWW0TMTmk2d7hLcWD1/e2g5HDM/HQ3csaLSqXCfqwh4uNDuNqlaKWXmEsL4Cs41Z0KnILNvwbHAah3C2yt06kw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -410,7 +418,6 @@ packages:
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
-    dev: true
 
   /@types/react-dom/18.0.6:
     resolution: {integrity: sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA==}
@@ -418,17 +425,21 @@ packages:
       '@types/react': 18.0.15
     dev: true
 
+  /@types/react-type-animation/1.1.1:
+    resolution: {integrity: sha512-YBUjbkOd9O0ZZFbL+DM75IeV7qSKa3P0Db01RhnXl1LVyOMmdmdijU6BDxf3RO/FKZadHNXkVNloNw7/hfjkQw==}
+    dependencies:
+      '@types/react': 18.0.15
+    dev: false
+
   /@types/react/18.0.15:
     resolution: {integrity: sha512-iz3BtLuIYH1uWdsv6wXYdhozhqj20oD4/Hk2DNXIn1kFsmp9x8d9QB6FnPhfkbhd2PgEONt9Q1x/ebkwjfFLow==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
       csstype: 3.1.0
-    dev: true
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
-    dev: true
 
   /@typescript-eslint/eslint-plugin/5.30.7_6wltbjakwuqm7awqswigmiuhd4:
     resolution: {integrity: sha512-l4L6Do+tfeM2OK0GJsU7TUcM/1oN/N25xHm3Jb4z3OiDU4Lj8dIuxX9LpVMS9riSXQs42D1ieX7b85/r16H9Fw==}
@@ -794,7 +805,6 @@ packages:
 
   /csstype/3.1.0:
     resolution: {integrity: sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==}
-    dev: true
 
   /d2coding/1.3.2:
     resolution: {integrity: sha512-g+Dgy1ZSAKTgWIl2jhpr6K3keFic8aapOFlVh74eoBYPbjGq5lMdEzANG5w6hFX1fzQBsaAzhuTYICRjyt4OcA==}
@@ -2080,6 +2090,19 @@ packages:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /react-type-animation/1.1.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-/nbyYNr69H8hKU5W8TIakZ3LqQxMcBvVjfydjF5J6ix2Js6P9uEmB/KrVgc8FU8hLjkYx09TzsllxlihargFAw==}
+    engines: {node: '>=8', npm: '>=5'}
+    peerDependencies:
+      prop-types: ^15.5.4
+      react: '>= 15.0.0'
+      react-dom: '>= 15.0.0'
+    dependencies:
+      '@camwiegert/typical': 0.1.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
