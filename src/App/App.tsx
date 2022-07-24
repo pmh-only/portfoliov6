@@ -1,6 +1,5 @@
 import { Fragment } from 'react'
 import HelloJumbotron from '../HelloJumbotron/HelloJumbotron'
-import Keywords from '../Keywords/Keywords'
 
 import './App.module.scss'
 
@@ -14,7 +13,6 @@ const App = () =>
 
     <main>
       <HelloJumbotron />
-      <Keywords />
     </main>
 
     <footer></footer>
