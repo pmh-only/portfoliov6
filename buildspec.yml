@@ -6,16 +6,7 @@ phases:
       nodejs: 16
 
     commands:
-      - cd /tmp/
-      - curl -OJL https://github.com/git-lfs/git-lfs/releases/download/v2.13.2/git-lfs-linux-amd64-v2.13.2.tar.gz
-      - tar xzf git-lfs-linux-amd64-v2.13.2.tar.gz
-      - ./install.sh
-      - cd $CODEBUILD_SRC_DIR
       - n lts
-
-  pre_build:
-    commands:
-      - git lfs pull
 
   build:
     commands:
