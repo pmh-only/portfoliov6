@@ -130,6 +130,8 @@ resource "aws_iam_role_policy" "pipeline_policy" {
         "s3:PutObject"
       ],
       "Resource": [
+        "${aws_s3_bucket.frontend.arn}",
+        "${aws_s3_bucket.frontend.arn}/*"
         "${aws_s3_bucket.pipeline_bucket.arn}",
         "${aws_s3_bucket.pipeline_bucket.arn}/*"
       ]
