@@ -1,0 +1,47 @@
+resource "aws_cloudfront_origin_access_identity" "cfoai" { 
+}
+
+resource "aws_cloudfront_distribution" "cf" {
+  origin {
+    origin_id = var.originnm
+    domain_name = aws_s3_bucket.frontend.bucket_regional_domain_name
+
+    s3_origin_config {
+      origin_access_identity = aws_cloudfront_origin_access_identity.cfoai.cloudfront_access_identity_path
+    }
+  }
+
+  default_cache_behavior {
+    target_origin_id = var.originnm
+    allowed_methods = ["GET", "HEAD", "OPTIONS"]
+    cached_methods = ["GET", "HEAD", "OPTIONS"]
+    compress = true
+    viewer_protocol_policy = "redirect-to-https"
+
+    forwarded_values {
+      query_string = true
+
+      headers = ["*"]
+      cookies {
+        forward = "all"
+      }
+    }
+  }
+
+  enabled = true
+  is_ipv6_enabled = true
+  
+  default_root_object = "index.html"
+
+  aliases = [var.domain]
+
+  viewer_certificate {
+    acm_certificate_arn = aws_acm_certificate.acmcert.arn
+  }
+
+  restrictions {
+    geo_restriction {
+      restriction_type = "none"
+    }
+  }
+}
