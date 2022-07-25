@@ -39,7 +39,7 @@ resource "aws_codepipeline" "pipeline" {
       version          = "1"
 
       configuration = {
-        ProjectName = "${var.cicdnm}-codebuild"
+        ProjectName = aws_codebuild_project.build.name
       }
     }
   }
@@ -60,6 +60,22 @@ resource "aws_codepipeline" "pipeline" {
         Extract = true
       }
     }
+  }
+}
+
+resource "aws_codebuild_project" "build" {
+  name = "${var.cicdnm}-codebuild"
+  artifacts {
+    type = "CODEPIPELINE"
+  }
+  environment {
+    compute_type = "BUILD_GENERAL1_SMALL"
+    image = "aws/codebuild/standard:6.0"
+    type = "LINUX_CONTAINER"
+  }
+  service_role = aws_iam_role.build_role.arn
+  source {
+    type = "CODEPIPELINE"
   }
 }
 
@@ -138,3 +154,59 @@ resource "aws_iam_role_policy" "pipeline_policy" {
 EOF
 }
 
+resource "aws_iam_role" "build_role" {
+  name = "${var.cicdnm}-codebuild-role"
+
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "codebuild.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+EOF
+}
+
+resource "aws_iam_role_policy" "build_policy" {
+  name = "${var.cicdnm}-codebuild-policy"
+  role = aws_iam_role.build_role.id
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Resource": [
+        "*"
+      ],
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ]
+    },
+    {
+      "Effect":"Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion",
+        "s3:GetBucketVersioning",
+        "s3:PutObjectAcl",
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "${aws_s3_bucket.pipeline_bucket.arn}",
+        "${aws_s3_bucket.pipeline_bucket.arn}/*"
+      ]
+    }
+  ]
+}
+EOF
+}

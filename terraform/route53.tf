@@ -18,3 +18,15 @@ resource "aws_route53_record" "cert" {
   type            = each.value.type
   zone_id         = aws_route53_zone.r53zone.zone_id
 }
+
+resource "aws_route53_record" "cloudfront" {
+  name = var.domain
+  type = "A"
+  zone_id = aws_route53_zone.r53zone.zone_id
+
+  alias {
+    name = aws_cloudfront_distribution.cf.domain_name
+    zone_id = aws_cloudfront_distribution.cf.hosted_zone_id
+    evaluate_target_health = false
+  }
+}
