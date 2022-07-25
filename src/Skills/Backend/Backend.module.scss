@@ -1,0 +1,10 @@
+.logos {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 10px;
+
+  & > li {
+    font-size: 60px;
+  }
+}
