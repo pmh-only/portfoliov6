@@ -18,6 +18,8 @@ const HelloJumbotron = () => {
 
   return (
     <article id="hello" className={style.container}>
+      <video src="/hellobg.mp4" muted autoPlay loop />
+
       <h1 className={style.title}>
         {message.split('').map((v, i) =>
           toBold.includes(v)
@@ -25,7 +27,7 @@ const HelloJumbotron = () => {
             : <>{queueIndex > i && v}</>)}
         {queueIndex < message.length - 1 && '_'}
       </h1>
-      <p><code>#next</code>까지 스크롤을 내려주세요</p>
+      <p>스크롤을 내려주세요</p>
     </article>
   )
 }

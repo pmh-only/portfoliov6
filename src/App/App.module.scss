@@ -1,6 +1,7 @@
 @import 'd2coding/d2coding-ligature-full.css';
 @import '@fontsource/noto-sans-kr/100.css';
 @import '@fontsource/noto-sans-kr/900.css';
+@import 'devicon/devicon.min.css';
 
 body {
   font-family: 'Noto Sans KR', Arial, Helvetica, sans-serif;
@@ -19,11 +20,15 @@ html, body {
   background-color: #121212;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p, ul, ol {
   padding: 0;
   margin: 0;
   font-weight: inherit;
   font-size: inherit;
+}
+
+strong {
+  font-weight: 900;
 }
 
 *::selection {
