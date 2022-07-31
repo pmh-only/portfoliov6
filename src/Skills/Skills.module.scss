@@ -1,3 +1,10 @@
+.container {
+  background-image: url('code.svg');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 50%;
+}
+
 .title  {
   padding: 20px 20px;
   top: 0px;
@@ -18,7 +25,7 @@
 
   & h2 {
     text-align: center;
-    padding: 40px 0px;
+    padding: 60px 0px;
     margin: 0px 0px 20px 0px;
     font-size: 20px;
     
@@ -33,5 +40,6 @@
     padding-bottom: 20px;
     width: 100%;
     max-width: 500px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   }
 }

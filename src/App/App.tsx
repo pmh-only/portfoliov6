@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import Actions from '../Actions/Actions'
 import HelloJumbotron from '../HelloJumbotron/HelloJumbotron'
 import Skills from '../Skills/Skills'
 
@@ -15,6 +16,7 @@ const App = () =>
     <main>
       <HelloJumbotron />
       <Skills />
+      <Actions />
     </main>
 
     <footer></footer>
