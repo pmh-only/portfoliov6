@@ -3,6 +3,7 @@ import Actions from '../Actions/Actions'
 import HelloJumbotron from '../HelloJumbotron/HelloJumbotron'
 import Lead from '../Lead/Lead'
 import Skills from '../Skills/Skills'
+import Teach from '../Teach/Teach'
 
 import './App.module.scss'
 
@@ -19,6 +20,7 @@ const App = () =>
       <Skills />
       <Actions />
       <Lead />
+      <Teach />
     </main>
 
     <footer></footer>
