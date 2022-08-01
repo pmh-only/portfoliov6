@@ -24,7 +24,7 @@ const HelloJumbotron = () => {
         {message.split('').map((v, i) =>
           toBold.includes(v)
             ? <strong>{queueIndex > i && v}</strong>
-            : <>{queueIndex > i && v}</>)}
+            : <>{queueIndex > i && v}{i === 7 && <wbr />}</>)}
         {queueIndex < message.length - 1 && '_'}
       </h1>
       <p>스크롤을 내려주세요</p>
