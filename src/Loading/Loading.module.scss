@@ -1,0 +1,21 @@
+.container {
+  background-color: #212121;
+
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+}
+
+.label {
+  font-size: 30px;
+}
