@@ -7,7 +7,7 @@ import Lead from '../Lead/Lead'
 import Skills from '../Skills/Skills'
 import Teach from '../Teach/Teach'
 
-import './App.module.scss'
+import style from './App.module.scss'
 
 const App = () =>
   <Fragment>
@@ -17,7 +17,7 @@ const App = () =>
       </nav>
     </header>
 
-    <main>
+    <main className={style.main}>
       <HelloJumbotron />
       <Skills />
       <Actions />

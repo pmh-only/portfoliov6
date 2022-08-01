@@ -14,6 +14,11 @@ code {
   color: #ff8686;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
 html, body {
   padding: 0;
   margin: 0;
@@ -43,4 +48,10 @@ strong {
 *::selection {
   color: #121212;
   background-color: #fafafa;
+}
+
+.main {
+  & > * {
+    scroll-snap-align: start;
+  }
 }
