@@ -1,0 +1,25 @@
+.container {
+  background-image: url('core.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  min-height: 100vh;
+}
+
+.title  {
+  padding: 20px 20px;
+  position: absolute;
+  z-index: 10;
+  max-width: 400px;
+  font-size: 30px;
+}
+
+.content {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -16,7 +16,7 @@ const Teach = () =>
       </p>
     </div>
 
-    <Carousel className={style.carousel} stopOnHover={false} infiniteLoop interval={5000} showArrows={false} showIndicators={false} showStatus={false} showThumbs={false} autoPlay>
+    <Carousel className={style.carousel} stopOnHover={false} infiniteLoop interval={5000} showArrows={false} showIndicators={false} showStatus={false} showThumbs={false} autoPlay swipeable={false}>
       <img src="/teach1.png" alt="" />
       <img src="/teach2.png" alt="" />
       <img src="/teach3.jpg" alt="" />
