@@ -18,7 +18,7 @@ const HelloJumbotron = () => {
 
   return (
     <article id="hello" className={style.container}>
-      <video src="/hellobg.mp4" muted autoPlay loop />
+      <video src="/hellobg.webm" muted autoPlay loop />
 
       <h1 className={style.title}>
         {message.split('').map((v, i) =>

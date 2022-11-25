@@ -30,7 +30,7 @@ const Loading = ({ onLoadingDone }: { onLoadingDone: () => any }) => {
   ]
 
   const videosToWatch = [
-    '/hellobg.mp4'
+    '/hellobg.webm'
   ]
 
   useEffect(() => {
