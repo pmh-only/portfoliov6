@@ -2,7 +2,7 @@ import style from './Cloud.module.scss'
 
 const Cloud = () =>
   <div>
-    <h2 style={{ backgroundImage: 'url("/cloud.png")' }}>
+    <h2 style={{ backgroundImage: 'url("/cloud.webp")' }}>
       저는 <strong>클라우드 아키텍트</strong>입니다.
     </h2>
     <div>

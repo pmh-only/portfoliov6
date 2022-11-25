@@ -8,25 +8,25 @@ import './Loadingbar.scss'
 
 const Loading = ({ onLoadingDone }: { onLoadingDone: () => any }) => {
   const imagesToWatch = [
-    '/actions1.jpg',
-    '/actions2.jpg',
-    '/actions3.jpg',
-    '/actions4.jpg',
-    '/actions5.jpg',
-    '/actions6.jpg',
-    '/backend.png',
+    '/actions1.webp',
+    '/actions2.webp',
+    '/actions3.webp',
+    '/actions4.webp',
+    '/actions5.webp',
+    '/actions6.webp',
+    '/backend.webp',
     '/bob.svg',
-    '/cloud.png',
-    '/core.jpg',
+    '/cloud.webp',
+    '/core.webp',
     '/grow.svg',
-    '/lead1.jpg',
-    '/lead2.jpg',
-    '/lead3.jpg',
-    '/lead4.jpg',
+    '/lead1.webp',
+    '/lead2.webp',
+    '/lead3.webp',
+    '/lead4.webp',
     '/stamp.svg',
-    '/teach1.png',
-    '/teach2.png',
-    '/teach3.jpg'
+    '/teach1.webp',
+    '/teach2.webp',
+    '/teach3.webp'
   ]
 
   const videosToWatch = [

@@ -20,10 +20,10 @@ const Lead = () =>
     </div>
 
     <Carousel className={style.carousel} swipeable={false} stopOnHover={false} infiniteLoop interval={5000} showArrows={false} showIndicators={false} showStatus={false} showThumbs={false} autoPlay>
-      <img src="/lead1.jpg" alt="" />
-      <img src="/lead2.jpg" alt="" />
-      <img src="/lead3.jpg" alt="" />
-      <img src="/lead4.jpg" alt="" />
+      <img src="/lead1.webp" alt="" />
+      <img src="/lead2.webp" alt="" />
+      <img src="/lead3.webp" alt="" />
+      <img src="/lead4.webp" alt="" />
     </Carousel>
   </article>
 

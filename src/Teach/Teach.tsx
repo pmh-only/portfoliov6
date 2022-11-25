@@ -17,9 +17,9 @@ const Teach = () =>
     </div>
 
     <Carousel className={style.carousel} stopOnHover={false} infiniteLoop interval={5000} showArrows={false} showIndicators={false} showStatus={false} showThumbs={false} autoPlay swipeable={false}>
-      <img src="/teach1.png" alt="" />
-      <img src="/teach2.png" alt="" />
-      <img src="/teach3.jpg" alt="" />
+      <img src="/teach1.webp" alt="" />
+      <img src="/teach2.webp" alt="" />
+      <img src="/teach3.webp" alt="" />
     </Carousel>
   </article>
 
